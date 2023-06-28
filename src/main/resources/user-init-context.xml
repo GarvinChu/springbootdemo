@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-lazy-init="true">
+
+    <!--    lazy init 延迟加载-->
+    <context:annotation-config/>
+    <bean id="userOne" class="com.utah.dto.UserWithInterface">
+        <property name="name" value="Join"/>
+        <property name="age" value="11"/>
+    </bean>
+    <bean id="userTwo" class="com.utah.dto.UserWithInterface">
+        <property name="age" value="12"/>
+    </bean>
+    <bean id="userThree" class="com.utah.dto.UserWithInterface">
+        <!--        会抛异常     初始化不成功-->
+        <property name="name" value="13"/>
+    </bean>
+</beans>
